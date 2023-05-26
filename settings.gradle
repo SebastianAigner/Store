@@ -1,4 +1,6 @@
 include ':store'
 include ':cache'
 include ':multicast'
+include ':paging'
+include ':compose'
 include ':rx2'

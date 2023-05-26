@@ -14,6 +14,7 @@ object Deps {
     }
 
     object Compose {
+        object Android {
         const val compiler = "androidx.compose.compiler:compiler:${Version.composeCompiler}"
         const val runtime = "androidx.compose.runtime:runtime:${Version.composeAndroidX}"
         const val ui = "androidx.compose.ui:ui:${Version.composeAndroidX}"
@@ -22,6 +23,14 @@ object Deps {
         const val foundationLayout = "androidx.compose.foundation:foundation-layout:${Version.composeAndroidX}"
         const val material = "androidx.compose.material:material:${Version.composeAndroidX}"
     }
+        object Jetbrains {
+            const val runtime = "org.jetbrains.compose.runtime:runtime:${Version.composeJetbrains}"
+            const val ui = "org.jetbrains.compose.ui:ui:${Version.composeJetbrains}"
+            const val foundation = "org.jetbrains.compose.foundation:foundation:${Version.composeJetbrains}"
+        }
+    }
+
+    object Jetbrains
 
     object Dagger {
         const val dagger = "com.google.dagger:dagger:${Version.dagger}"
@@ -46,6 +55,13 @@ object Deps {
     object Ktor {
         const val clientCore = "io.ktor:ktor-client-core:${Version.ktor}"
         const val clientCio = "io.ktor:ktor-client-cio:${Version.ktor}"
+    }
+
+    object Paging {
+        const val cash = "app.cash.paging:paging-common:${Version.pagingMultiplatform}"
+        const val runtime = "androidx.paging:paging-runtime:${Version.paging}"
+        const val common = "androidx.paging:paging-common:${Version.paging}"
+        const val compose = "androidx.paging:paging-compose:${Version.paging}"
     }
 
     object Rx {

@@ -6,10 +6,10 @@ object Version {
     const val androidTargetSdk = androidCompileSdk
     const val anvilGradlePlugin = "2.4.2"
     const val atomicFu = "0.18.5"
-    const val baseKotlin = "1.7.21"
+    const val baseKotlin = "1.8.20"
     const val binaryCompatibilityValidator = "0.12.1"
     const val composeAndroidX = "1.3.0-beta02"
-    const val composeJetbrains = "1.2.0-alpha01-dev755"
+    const val composeJetbrains = "1.4.0"
     const val composeCompiler = "1.4.0-alpha02"
     const val dagger = "2.44"
     const val dokkaGradlePlugin = "1.6.0"
@@ -34,4 +34,7 @@ object Version {
     const val sqlDelightGradlePlugin = sqlDelight
     const val store = "5.0.0-beta01"
     const val truth = "1.1.3"
+    const val paging = "3.1.1"
+    const val pagingCompose = "1.0.0-alpha19"
+    const val pagingMultiplatform = "3.1.1-0.2.0"
 }
