@@ -10,7 +10,6 @@ import org.mobilenativefoundation.store.store5.SourceOfTruth
 import org.mobilenativefoundation.store.store5.StoreBuilder
 import org.mobilenativefoundation.store.store5.impl.extensions.get
 
-
 @Suppress("UNCHECKED_CAST")
 class DefaultPagingConverter<Id : Any, InCollection : Identifiable<Id>, AsSingle : Identifiable<Id>> : PagingConverter<Id, InCollection, AsSingle> {
     override val itemConverter: PagedItemConverter<InCollection, AsSingle> = object : PagedItemConverter<InCollection, AsSingle> {
@@ -31,7 +30,6 @@ class DefaultPagingConverter<Id : Any, InCollection : Identifiable<Id>, AsSingle
     }
 }
 
-
 class DefaultKeyGenerator<Id : Any, InCollection : Identifiable<Id>, AsSingle : Identifiable<Id>> : KeyGenerator<Id, InCollection, AsSingle> {
     override fun fromSingle(value: AsSingle): PagingKey.Item<Id> {
         return object : PagingKey.Item<Id> {
@@ -46,12 +44,9 @@ class DefaultKeyGenerator<Id : Any, InCollection : Identifiable<Id>, AsSingle : 
                 override val after: Id? = null
                 override val type: PagingParams.Type = PagingParams.Type.Append
             }
-
         }
     }
-
 }
-
 
 abstract class PagingRepository<Id : Any, InCollection : Identifiable<Id>, AsSingle : Identifiable<Id>> private constructor(
     private val scope: CoroutineScope,
@@ -70,7 +65,6 @@ abstract class PagingRepository<Id : Any, InCollection : Identifiable<Id>, AsSin
             keyGenerator = keyGenerator
         )
     ).build()
-
 
     val pager: Pager<Id, InCollection, AsSingle> = MutableStateFlow(PagingState.initial())
 

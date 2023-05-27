@@ -14,7 +14,6 @@ plugins {
     id("kotlinx-atomicfu")
 }
 
-
 dependencies {
     with(Deps.Kotlinx) {
         api(atomicFu)
@@ -48,8 +47,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     buildFeatures {
@@ -65,7 +64,7 @@ tasks.withType<DokkaTask>().configureEach {
     dokkaSourceSets.configureEach {
         reportUndocumented.set(false)
         skipDeprecated.set(true)
-        jdkVersion.set(8)
+        jdkVersion.set(17)
     }
 }
 
