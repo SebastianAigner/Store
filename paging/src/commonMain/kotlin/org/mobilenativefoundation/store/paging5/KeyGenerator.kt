@@ -1,6 +1,15 @@
 package org.mobilenativefoundation.store.paging5
 
-interface KeyGenerator<Id : Any, InCollection : Any, AsSingle : Any> {
+import org.mobilenativefoundation.store.cache5.Identifiable
+import org.mobilenativefoundation.store.paging5.impl.DefaultKeyGenerator
+
+interface KeyGenerator<Id : Any, InCollection : Identifiable<Id>, AsSingle : Identifiable<Id>> {
     fun fromSingle(value: AsSingle): PagingKey.Item<Id>
-    fun fromCollection(value: InCollection): PagingKey.Page<Id>
+
+    companion object {
+        fun <Id : Any, InCollection : Identifiable<Id>, AsSingle : Identifiable<Id>> default():
+                KeyGenerator<Id, InCollection, AsSingle> = DefaultKeyGenerator<Id, InCollection, AsSingle>()
+    }
 }
+
+

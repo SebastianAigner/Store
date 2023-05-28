@@ -7,8 +7,8 @@ import org.mobilenativefoundation.store.cache5.Identifiable
 
 class PagingCache<Id : Any, InCollection : Identifiable<Id>, AsSingle : Identifiable<Id>>(
     private val scope: CoroutineScope,
-    private val converter: PagingConverter<Id, InCollection, AsSingle>,
-    private val keyGenerator: KeyGenerator<Id, InCollection, AsSingle>
+    private val converter: PagingConverter<Id, InCollection, AsSingle> = PagingConverter.default(),
+    private val keyGenerator: KeyGenerator<Id, InCollection, AsSingle> = KeyGenerator.default()
 ) : Cache<PagingKey<Id>, PagingData<Id, InCollection, AsSingle>> {
 
     private val accessor = PagingCacheAccessor<Id, InCollection, AsSingle>()
@@ -59,7 +59,7 @@ class PagingCache<Id : Any, InCollection : Identifiable<Id>, AsSingle : Identifi
                 accessor.putPage(key, value)
 
                 scope.launch {
-                    value.data.map { converter.itemConverter.from(it) }.forEach {
+                    value.data.map { converter.from(it) }.forEach {
                         val pagingKey = keyGenerator.fromSingle(it)
                         val pagingData = converter.asPagingData(it)
                         accessor.putItem(pagingKey, pagingData)

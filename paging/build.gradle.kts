@@ -16,6 +16,7 @@ plugins {
 
 kotlin {
     android()
+    jvm()
 
     sourceSets {
         all {
@@ -40,7 +41,17 @@ kotlin {
                 implementation(project(":cache"))
             }
         }
-        val androidMain by getting
+        val commonTest by getting {
+            dependsOn(commonMain)
+            dependencies {
+                implementation(kotlin("test"))
+                with(Deps.Test) {
+                    implementation(core)
+                    implementation(coroutinesTest)
+                    implementation("app.cash.turbine:turbine:0.13.0")
+                }
+            }
+        }
     }
 }
 
