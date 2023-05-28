@@ -68,8 +68,8 @@ class PostPagingStoreBuilder(
                     else -> {
                     }
                 }
-
-            })
+            }
+        )
 
     private fun buildMemoryCache(): PagingCache<Int, Post, Post> = PagingCache(
         scope = scope,

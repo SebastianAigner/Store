@@ -1,4 +1,4 @@
-package org.mobilenativefoundation.store.compose
+package org.mobilenativefoundation.store.paging.compose
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState

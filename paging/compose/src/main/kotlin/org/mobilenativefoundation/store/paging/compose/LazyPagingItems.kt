@@ -1,4 +1,4 @@
-package org.mobilenativefoundation.store.compose
+package org.mobilenativefoundation.store.paging.compose
 
 import org.mobilenativefoundation.store.paging5.PagingData
 

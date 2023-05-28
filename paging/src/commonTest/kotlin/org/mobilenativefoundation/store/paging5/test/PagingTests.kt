@@ -34,7 +34,6 @@ class PagingTests {
             assertEquals(1, firstPagingState.pages.size)
             assertEquals(initialPagingParams.copy(after = 21), firstPagingState.next)
         }
-
     }
 
     @Test

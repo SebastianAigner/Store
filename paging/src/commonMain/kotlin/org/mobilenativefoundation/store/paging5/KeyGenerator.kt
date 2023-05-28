@@ -8,8 +8,6 @@ interface KeyGenerator<Id : Any, InCollection : Identifiable<Id>, AsSingle : Ide
 
     companion object {
         fun <Id : Any, InCollection : Identifiable<Id>, AsSingle : Identifiable<Id>> default():
-                KeyGenerator<Id, InCollection, AsSingle> = DefaultKeyGenerator<Id, InCollection, AsSingle>()
+            KeyGenerator<Id, InCollection, AsSingle> = DefaultKeyGenerator<Id, InCollection, AsSingle>()
     }
 }
-
-

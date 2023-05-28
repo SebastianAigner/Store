@@ -10,7 +10,6 @@ internal class DefaultKeyGenerator<Id : Any, InCollection : Identifiable<Id>, As
     override fun fromSingle(value: AsSingle): PagingKey.Item<Id> = DefaultPagingKey.Item(value.id)
 }
 
-
 internal sealed class DefaultPagingKey<Id : Any> {
     data class Item<Id : Any>(
         override val id: Id

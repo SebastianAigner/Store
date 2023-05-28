@@ -3,7 +3,6 @@ package org.mobilenativefoundation.store.paging5.test.util
 import org.mobilenativefoundation.store.paging5.PagingData
 import org.mobilenativefoundation.store.paging5.PagingParams
 
-
 sealed class PostPagingData {
     data class Page(
         override val params: PagingParams<Int>,

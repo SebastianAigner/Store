@@ -13,5 +13,4 @@ class DefaultPagingConverter<Id : Any, InCollection : Identifiable<Id>, AsSingle
             override val id: Id = value.id
             override val data: AsSingle = value
         }
-
 }

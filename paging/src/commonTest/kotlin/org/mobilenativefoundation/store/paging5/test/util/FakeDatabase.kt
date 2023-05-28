@@ -15,5 +15,4 @@ class FakeDatabase {
     fun findPostById(id: Int) = posts[id]
     fun findOnePage(params: PostPagingParams) =
         pages.values.firstOrNull { data -> data.params == params }
-
 }
